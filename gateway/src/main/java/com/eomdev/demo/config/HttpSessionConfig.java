@@ -11,14 +11,21 @@ import org.springframework.session.web.http.HttpSessionStrategy;
 @EnableRedisHttpSession
 public class HttpSessionConfig {
 
-    @Bean
-    public JedisConnectionFactory connectionFactory() {
-        return new JedisConnectionFactory();
-    }
+	@Bean
+	public JedisConnectionFactory connectionFactory() {
+		// return new JedisConnectionFactory();
+		JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
+		jedisConnectionFactory.setHostName("localhost");
+		jedisConnectionFactory.setPort(6379);
+		jedisConnectionFactory.setTimeout(0);
+		jedisConnectionFactory.setUsePool(true);
 
-    @Bean
-    public HttpSessionStrategy httpSessionStrategy() {
-        return new HeaderHttpSessionStrategy();
-    }
+		return jedisConnectionFactory;
+	}
+
+	@Bean
+	public HttpSessionStrategy httpSessionStrategy() {
+		return new HeaderHttpSessionStrategy();
+	}
 
 }

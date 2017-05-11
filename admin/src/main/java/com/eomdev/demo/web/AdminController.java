@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-/**
- * Created by eomdev on 2016. 6. 1..
- */
 @RestController
 public class AdminController {
 

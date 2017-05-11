@@ -13,9 +13,6 @@ import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Created by eomdev on 2016. 5. 31..
- */
 @RestController
 @Slf4j
 public class ResourceController {
